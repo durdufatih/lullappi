@@ -15,6 +15,11 @@
 		<key>NSAllowsArbitraryLoadsInWebContent</key>
 		<true/>
 	</dict>
+    <key>UIApplicationSceneManifest</key>
+        <dict>
+            <key>UISceneConfigurations</key>
+            <dict/>
+        </dict>
 	<key>GADApplicationIdentifier</key>
 	<string>ca-app-pub-6063592974982071~6379577063</string>
 	<key>SKAdNetworkItems</key>

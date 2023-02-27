@@ -20,10 +20,10 @@ struct Settings: View {
             VStack() {
                 Form{
                     
-                    Section(header: Text("Premium Account")) {
+                    /*Section(header: Text("Premium Account")) {
                        NavigationLink("Remove Ads", destination: PremiumPage())
                         .padding(2)
-                    }
+                    }*/
                     
                     Section(header: Text("Application")) {
                         VStack(alignment: .leading){

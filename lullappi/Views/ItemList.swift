@@ -43,8 +43,8 @@ struct ItemList: View {
             .padding(EdgeInsets(top: 20, leading: 0, bottom: 0, trailing: 0))
             .navigationBarTitle("Choose Lullaby" , displayMode:.inline)
             .navigationBarItems(
-                leading:
-                    NavigationLink(destination: PremiumPage()){Image(systemName: "fuelpump.fill").foregroundColor(.white)},
+                //leading:
+                //    NavigationLink(destination: PremiumPage()){Image(systemName: "fuelpump.fill").foregroundColor(.white)},
                 trailing:
                     NavigationLink(destination: Settings()){Image(systemName: "gear").foregroundColor(.white)}
             )

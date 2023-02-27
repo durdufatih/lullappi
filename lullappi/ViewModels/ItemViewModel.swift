@@ -30,6 +30,7 @@ public class ItemViewModel : ObservableObject {
     var timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
     public func startPlayer(pathString:String){
+        
         guard let path = Bundle.main.path(forResource: pathString, ofType:"mp4") else {
             debugPrint("\(pathString) not found")
             return
@@ -59,6 +60,7 @@ public class ItemViewModel : ObservableObject {
         repeatCount = 0
         player?.numberOfLoops = 0
     }
+    
     public func getRangeByIndex()-> Double{
         return rangeOfTime[rangeIndex]
     }

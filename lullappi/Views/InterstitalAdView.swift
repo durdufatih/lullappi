@@ -16,23 +16,8 @@ final class Interstitial: NSObject, GADFullScreenContentDelegate {
     
     override init() {
         super.init()
-        loadInterstitial()
     }
-    
-    func loadInterstitial(){
-        let request = GADRequest()
-        GADInterstitialAd.load(withAdUnitID:AdIds.interstitial.rawValue,
-                                    request: request,
-                          completionHandler: { [self] ad, error in
-                            if let error = error {
-                              print("Failed to load interstitial ad: \(error.localizedDescription)")
-                              return
-                            }
-                            interstitial = ad
-                            interstitial?.fullScreenContentDelegate = self
-                          }
-        )
-    }
+
     
     /// Tells the delegate that the ad failed to present full screen content.
     func ad(_ ad: GADFullScreenPresentingAd, didFailToPresentFullScreenContentWithError error: Error) {
@@ -45,7 +30,25 @@ final class Interstitial: NSObject, GADFullScreenContentDelegate {
     }
     
     func showAd(){
-        let root = UIApplication.shared.windows.first?.rootViewController
-        interstitial?.present(fromRootViewController: root!)
+        let request = GADRequest()
+        GADInterstitialAd.load(withAdUnitID:AdIds.interstitial.rawValue,request: request,
+                               completionHandler: { [self] ad, error in
+            if let error = error {
+              print("Failed to load interstitial ad: \(error.localizedDescription)")
+              return
+            }
+            self.interstitial = ad
+            self.interstitial?.fullScreenContentDelegate = self
+                if ad != nil{
+                    let root = UIApplication.shared.windows.first?.rootViewController
+                    self.interstitial?.present(fromRootViewController: root!)
+                }
+                else{
+                    print("Ad wasn't ready")
+                }
+            }
+        )
+    
+        
     }
 }

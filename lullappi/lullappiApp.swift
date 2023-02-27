@@ -14,12 +14,15 @@ struct lullappiApp: App {
     
     init() {
        
-        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.white]
-        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.white]
-        UINavigationBar.appearance().tintColor = UIColor.white
-        UINavigationBar.setAnimationsEnabled(false)
-        GADMobileAds.sharedInstance().start(completionHandler: nil)
-        GADMobileAds.sharedInstance().requestConfiguration.testDeviceIdentifiers = [ "F8BB1C28-BAE8-11D6-9C31-00039315CD46" ]
+        DispatchQueue.main.async {
+            UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+            UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.white]
+            UINavigationBar.appearance().tintColor = UIColor.white
+            UINavigationBar.setAnimationsEnabled(false)
+            GADMobileAds.sharedInstance().start(completionHandler: nil)
+            GADMobileAds.sharedInstance().requestConfiguration.testDeviceIdentifiers = [ "F8BB1C28-BAE8-11D6-9C31-00039315CD46" ,"74e40c4a1fd65ccfb362d68b3a9a1388"]
+        }
+        
         
                    
                

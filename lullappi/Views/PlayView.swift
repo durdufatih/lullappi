@@ -59,7 +59,6 @@ struct PlayView: View {
             }
             BannerVC()
         }.onAppear(){
-            print(String(describing: GADMobileAds.sharedInstance().requestConfiguration.testDeviceIdentifiers))
             valueText = viewModel.getTimerText()
         }
         

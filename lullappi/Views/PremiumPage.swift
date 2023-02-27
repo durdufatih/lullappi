@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct PremiumPage: View {
+
     var body: some View {
         
        
@@ -15,8 +16,10 @@ struct PremiumPage: View {
             Text("Sell Your Time").font(.title).fontWeight(.bold).padding(EdgeInsets(top: 10, leading: 0, bottom: 0, trailing: 0))
             Text("Dont see ads and save your free time").padding(EdgeInsets(top: 30, leading: 0, bottom: 0, trailing: 0))
             VStack{
-                Button("9.99$ / 1 Month") {
-                    print("Buy items 9.99")
+                Text("Hello")
+                Spacer()
+               Button("9.99$ / 1 Month") {
+                   print("Test")
                 }.frame(maxWidth: .infinity,minHeight: 45).background(Color.blue).controlSize(.large).foregroundColor(.white).cornerRadius(10)
                 
                 Button("96.00$ / 12 Month") {

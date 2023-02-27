@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct DetailView: View {
+    @State var firstAppear: Bool = true
     var item:ItemModel
     @EnvironmentObject var viewModel:ItemViewModel
     
@@ -30,7 +31,18 @@ struct DetailView: View {
             .onDisappear(perform:{
                 Interstitial().showAd()
             })
-            .onAppear(perform: start)
+            
+            //.onAppear(perform: start)
+            .onAppear(perform: {
+                viewModel.resetCount()
+                viewModel.resetTimerAll()
+                if self.firstAppear {
+                    Interstitial().showAd()
+                    start()
+                    self.firstAppear = false
+                }
+                
+            })
         
         
     }
