@@ -11,10 +11,10 @@ import GoogleMobileAds
 enum AdIds : String {
     /** REPLACE THE VALUES BY YOUR APP AND AD IDS **/
     case appId              = "ca-app-pub-6063592974982071~6379577063" // app id
-    case banner             = //"ca-app-pub-6063592974982071/6694517237" // test id
-    "ca-app-pub-3940256099942544/2934735716"
-    case interstitial       = //"ca-app-pub-6063592974982071/6612247445"
-    "ca-app-pub-3940256099942544/4411468910"
+    case banner             = "ca-app-pub-6063592974982071/6694517237" // test id
+    //"ca-app-pub-3940256099942544/2934735716"
+    case interstitial       = "ca-app-pub-6063592974982071/6612247445"
+    //"ca-app-pub-3940256099942544/4411468910"
     
 }
 
