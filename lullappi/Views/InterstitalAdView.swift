@@ -31,7 +31,7 @@ final class Interstitial: NSObject, GADFullScreenContentDelegate {
     
     func showAd(){
         let request = GADRequest()
-        GADInterstitialAd.load(withAdUnitID:AdIds.interstitial.rawValue,request: request,
+        GADInterstitialAd.load(withAdUnitID:"AdIds.interstitial.rawValue",request: request,
                                completionHandler: { [self] ad, error in
             if let error = error {
               print("Failed to load interstitial ad: \(error.localizedDescription)")

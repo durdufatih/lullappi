@@ -57,7 +57,7 @@ struct PlayView: View {
                 
                 
             }
-            BannerVC()
+            //BannerVC()
         }.onAppear(){
             valueText = viewModel.getTimerText()
         }

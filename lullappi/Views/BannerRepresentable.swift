@@ -17,7 +17,7 @@ import SwiftUI
         let view = GADBannerView(adSize: gadSize)
 
         let viewController = UIViewController()
-        view.adUnitID = AdIds.banner.rawValue
+        //view.adUnitID = AdIds.banner.rawValue
         view.rootViewController = viewController
         viewController.view.addSubview(view)
         viewController.view.frame = CGRect(origin: .zero, size: gadSize.size)
