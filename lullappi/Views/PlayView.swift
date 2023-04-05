@@ -19,7 +19,7 @@ struct PlayView: View {
     var body: some View {
         
         VStack{
-            if (!(valueText.isEmpty) && !(valueText == "") && !(valueText == "00:00")){ Text(valueText).font(.title).fontWeight(.bold).foregroundColor(.primary)
+            if (!(valueText.isEmpty) && !(valueText == "") && !(valueText == "00:00") && viewModel.timeLenght > 0){ Text(valueText).font(.title).fontWeight(.bold).foregroundColor(.primary)
                     .onReceive(viewModel.timer) { _ in
                         if viewModel.timeLenght > 0 {
                             viewModel.decreaseTimer()
@@ -30,7 +30,7 @@ struct PlayView: View {
             
             HStack{
                 Image(systemName: "timer.circle").resizable().frame(width: 50,height: 50)
-                    .foregroundColor(.white).padding(10)
+                    .foregroundColor(.black).padding(10)
                     .onTapGesture(
                         perform: {
                             viewModel.increaseRangeIndex()
@@ -38,8 +38,8 @@ struct PlayView: View {
                             valueText = viewModel.getTimerText()
                         }
                     )
-                Image(systemName: playAction ? "play.circle":"pause.circle").resizable()
-                    .frame(width: 70,height: 70).foregroundColor(.white).padding(10)
+                Image(systemName: playAction ? "pause.circle":"play.circle").resizable()
+                    .frame(width: 70,height: 70).foregroundColor(.black).padding(10)
                     .onTapGesture(
                         perform: {
                             playAction.toggle()
@@ -47,7 +47,7 @@ struct PlayView: View {
                         }
                     )
                 Image(systemName: "repeat.circle").resizable()
-                    .frame(width: 50,height: 50).foregroundColor(.white).padding(10)
+                    .frame(width: 50,height: 50).foregroundColor(.black).padding(10)
                     .onTapGesture (perform: {
                         viewModel.increaseRepeatCount()
                         viewModel.resetTimerAll()
