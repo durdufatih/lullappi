@@ -29,7 +29,7 @@ struct DetailView: View {
                 .scaledToFill().opacity(0.8)
         ).navigationTitle(Text(item.shownName))
             //.onDisappear(perform:{
-            //    Interstitial().showAd()
+                //Interstitial().showAd()
             //})
             
             //.onAppear(perform: start)
