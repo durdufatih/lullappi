@@ -36,7 +36,7 @@ public class ItemViewModel : ObservableObject {
             return
         }
         player = try? AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
-        player!.numberOfLoops = 0
+        player!.numberOfLoops = -1
         player!.play()
         timeLenght = getRangeByIndex()
     }

@@ -2,12 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-    <key>ITSAppUsesNonExemptEncryption</key>
-    <false/>
-	<key>NSAppTrasportSecurity</key>
-	<string></string>
+	<key>GADApplicationIdentifier</key>
+	<string>ca-app-pub-6063592974982071~6379577063</string>
 	<key>GADIsAdManagerApp</key>
 	<true/>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
@@ -17,13 +17,8 @@
 		<key>NSAllowsArbitraryLoadsInWebContent</key>
 		<true/>
 	</dict>
-    <key>UIApplicationSceneManifest</key>
-        <dict>
-            <key>UISceneConfigurations</key>
-            <dict/>
-        </dict>
-	<key>GADApplicationIdentifier</key>
-	<string>ca-app-pub-6063592974982071~6379577063</string>
+	<key>NSAppTrasportSecurity</key>
+	<string></string>
 	<key>SKAdNetworkItems</key>
 	<array>
 		<dict>
@@ -226,6 +221,16 @@
 			<key>SKAdNetworkIdentifier</key>
 			<string>3qcr597p9d.skadnetwork</string>
 		</dict>
+	</array>
+	<key>UIApplicationSceneManifest</key>
+	<dict>
+		<key>UISceneConfigurations</key>
+		<dict/>
+	</dict>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>audio</string>
+		<string>processing</string>
 	</array>
 </dict>
 </plist>
