@@ -46,13 +46,14 @@ struct PlayView: View {
                             viewModel.changePlay(result: playAction)
                         }
                     )
-                Image(systemName: "repeat.circle").resizable()
+                /*Image(systemName: "repeat.circle").resizable()
                     .frame(width: 50,height: 50).foregroundColor(.black).padding(10)
                     .onTapGesture (perform: {
-                        viewModel.increaseRepeatCount()
                         viewModel.resetTimerAll()
+                        viewModel.increaseRepeatCount()
                         valueText = "\(viewModel.repeatCount) Times"
                     })
+                 */
                     
                 
                 

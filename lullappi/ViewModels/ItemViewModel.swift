@@ -31,12 +31,18 @@ public class ItemViewModel : ObservableObject {
     
     public func startPlayer(pathString:String){
         
+        do{
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback)
+            try AVAudioSession.sharedInstance().setActive(true)
+        }catch let sessionErr{
+            print ("Session setting problem :\(sessionErr)")
+        }
         guard let path = Bundle.main.path(forResource: pathString, ofType:"mp4") else {
             debugPrint("\(pathString) not found")
             return
         }
         player = try? AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
-        player!.numberOfLoops = -1
+        player!.numberOfLoops = 0
         player!.play()
         timeLenght = getRangeByIndex()
     }
