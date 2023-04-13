@@ -20,11 +20,13 @@ struct PremiumPage: View {
                 Spacer()
                Button("9.99$ / 1 Month") {
                    print("Test")
-                }.frame(maxWidth: .infinity,minHeight: 45).background(Color.blue).controlSize(.large).foregroundColor(.white).cornerRadius(10)
+                }.frame(maxWidth: .infinity,minHeight: 45).background(Color.blue)
+                    //.controlSize(.large).foregroundColor(.white).cornerRadius(10)
                 
                 Button("96.00$ / 12 Month") {
                     print("Buy items 9.99")
-                }.frame(maxWidth: .infinity,minHeight: 45).background(Color.blue).controlSize(.large).foregroundColor(.white).cornerRadius(10)
+                }.frame(maxWidth: .infinity,minHeight: 45).background(Color.blue)
+                    //.controlSize(.large).foregroundColor(.white).cornerRadius(10)
                 Text("Save %20 from yearly sell").foregroundColor(.purple).font(Font.caption).fontWeight(.bold)
             }.padding(EdgeInsets(top: 30, leading: 0, bottom: 0, trailing: 0))
             Spacer()

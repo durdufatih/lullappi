@@ -10,7 +10,7 @@ import StoreKit
 import MessageUI
 
 struct Settings: View {
-    @Environment(\.requestReview) var requestReview
+    //@Environment(\.req) var requestReview
     @State var test:Bool = false
     @State private var sendEmail = false
     let constants = Constants.shared
@@ -30,7 +30,7 @@ struct Settings: View {
                             Text("Rate This App")
                             Text("If you like our app you can give 5 star to us").font(Font.custom("System", size: 10))
                         }.onTapGesture {
-                            requestReview()
+                            //requestReview()
                         }.padding(2)
                     }
                     
