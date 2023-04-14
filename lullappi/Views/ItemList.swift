@@ -32,8 +32,8 @@ struct ItemList: View {
             
             LazyVGrid(columns: items,spacing: 10) {
                 ForEach(itemViewModel.itemList) { item in
-                    NavigationLink(destination: DetailView(item: item)) {
-                        Item(item: item)
+                    NavigationLink(destination: DetailView(item: item,icon:false)) {
+                        Item(item: item,icon: false)
                     }
                     
                 }
@@ -50,12 +50,13 @@ struct ItemList: View {
             //)
             .navigationViewStyle(.stack)
             
-        }.background(
-            Image("background")
-                .resizable()
-                .edgesIgnoringSafeArea(.all)
-                .scaledToFill()
-            )
+        }
+        //.background(
+        //    Image("background")
+        //        .resizable()
+        //        .edgesIgnoringSafeArea(.all)
+        //        .scaledToFill()
+        //    )
     }
 }
 

@@ -32,7 +32,19 @@ struct lullappiApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationView(){
-                ItemList()
+                TabView {
+                    ItemList()
+                                .tabItem {
+                                    Image(systemName: "1.circle")
+                                    Text("Lullabies")
+                                }
+                    ItemListWhiteNoise()
+                                .tabItem {
+                                    Image(systemName: "2.circle")
+                                    Text("Noises")
+                                }
+                }.background(.red)
+                
             }.environmentObject(itemViewModel)
                 .navigationViewStyle(.stack)
                 .edgesIgnoringSafeArea(.all)

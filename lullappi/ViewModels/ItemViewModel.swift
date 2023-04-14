@@ -11,14 +11,27 @@ import AVFAudio
 public class ItemViewModel : ObservableObject {
     
     @Published var itemList : [ItemModel] = [
-        ItemModel(name: "baa-baa-black-sheep", image: "cartoon1", shownName: "Ba Black Sheep"),
-        ItemModel(name: "Baby-lullaby-music", image: "cartoon5", shownName: "Baby Lullaby Music"),
-        ItemModel(name: "hush-little-baby", image: "cartoon6", shownName: "Hush Little Baby"),
-        ItemModel(name: "lavenders-blue", image: "cartoon1", shownName: "Lavenders"),
-        ItemModel(name: "mozart-minuet", image: "cartoon5", shownName: "Mozart Minuet"),
-        ItemModel(name: "mozart-piano-Sonata", image: "cartoon6", shownName: "Mozart Piano Sonata"),
-        ItemModel(name: "mozart-serenade", image: "cartoon1", shownName: "Mozart Serenade"),
-        ItemModel(name: "twinkle-twinkle-little-star", image: "cartoon5", shownName: "Twinkle Little Star"),
+        ItemModel(name: "baa-baa-black-sheep.mp4", image: "cartoon1", shownName: "Ba Black Sheep"),
+        ItemModel(name: "Baby-lullaby-music.mp4", image: "cartoon5", shownName: "Baby Lullaby Music"),
+        ItemModel(name: "hush-little-baby.mp4", image: "cartoon6", shownName: "Hush Little Baby"),
+        ItemModel(name: "lavenders-blue.mp4", image: "cartoon1", shownName: "Lavenders"),
+        ItemModel(name: "mozart-minuet.mp4", image: "cartoon5", shownName: "Mozart Minuet"),
+        ItemModel(name: "mozart-piano-Sonata.mp4", image: "cartoon6", shownName: "Mozart Piano Sonata"),
+        ItemModel(name: "mozart-serenade.mp4", image: "cartoon1", shownName: "Mozart Serenade"),
+        ItemModel(name: "twinkle-twinkle-little-star.mp4", image: "cartoon5", shownName: "Twinkle Little Star"),
+    ]
+    
+    @Published var whiteNoiseList : [ItemModel] = [
+        ItemModel(name: "babydriving.mp3", image: "car", shownName: "Driving"),
+        ItemModel(name: "clothesdryer.mp3", image: "dryer", shownName: "Clothes Dryer"),
+        ItemModel(name: "drone.mp3", image: "airplane", shownName: "Drone"),
+        ItemModel(name: "fetalhearth.mp3", image: "heart", shownName: "Heart"),
+        ItemModel(name: "freeway.mp3", image: "road.lanes", shownName: "Free Way"),
+        ItemModel(name: "hairdryer.mp3", image: "dryer", shownName: "Hear Dryer"),
+        ItemModel(name: "pinknoise.mp3", image: "crown", shownName: "Pink Noise"),
+        ItemModel(name: "shower.mp3", image: "shower", shownName: "Shower"),
+        ItemModel(name: "vacuum.mp3", image: "wind", shownName: "Vacuum"),
+        ItemModel(name: "whitenoise.mp3", image: "crown", shownName: "White Noise"),
     ]
     
     public var player: AVAudioPlayer?
@@ -37,10 +50,12 @@ public class ItemViewModel : ObservableObject {
         }catch let sessionErr{
             print ("Session setting problem :\(sessionErr)")
         }
-        guard let path = Bundle.main.path(forResource: pathString, ofType:"mp4") else {
+        guard let path = Bundle.main.path(forResource: pathString,ofType: nil) else {
             debugPrint("\(pathString) not found")
             return
         }
+        
+
         player = try? AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
         player!.numberOfLoops = 0
         player!.play()
