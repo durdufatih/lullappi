@@ -38,7 +38,7 @@ struct DetailView: View {
                 viewModel.resetCount()
                 viewModel.resetTimerAll()
                 if self.firstAppear {
-                    Interstitial().showAd()
+                    //Interstitial().showAd()
                     start()
                     self.firstAppear = false
                 }

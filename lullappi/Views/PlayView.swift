@@ -39,13 +39,14 @@ struct PlayView: View {
                         }
                     )
                 Image(systemName: playAction ? "pause.circle":"play.circle").resizable()
-                    .frame(width: 70,height: 70).foregroundColor(.black).padding(10)
+                    .frame(width: 50,height: 50).foregroundColor(.black).padding(10)
                     .onTapGesture(
                         perform: {
                             playAction.toggle()
                             viewModel.changePlay(result: playAction)
                         }
                     )
+                
                 /*Image(systemName: "repeat.circle").resizable()
                     .frame(width: 50,height: 50).foregroundColor(.black).padding(10)
                     .onTapGesture (perform: {
@@ -58,7 +59,7 @@ struct PlayView: View {
                 
                 
             }
-            BannerVC()
+            //BannerVC()
         }.onAppear(){
             valueText = viewModel.getTimerText()
         }
